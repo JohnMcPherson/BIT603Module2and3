@@ -2,6 +2,8 @@ package academy.learnprogramming.bit603_exercises;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,20 +16,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView inputNumber1 = findViewById(R.id.inputNumber1);
-        final TextView inputNumber2 = findViewById(R.id.inputNumber2);
-        final Button button = findViewById(R.id.buttonAdd);
-        final TextView textViewOutput = findViewById(R.id.textViewOutput);
+        final Button buttonBold = findViewById(R.id.buttonBold);
+        final Button buttonItalic = findViewById(R.id.buttonItalic);
+        final TextView outputText = findViewById(R.id.outputText);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        buttonBold.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float number1Value = Float.valueOf(inputNumber1.getText().toString());
-                float number2Value = Float.valueOf(inputNumber2.getText().toString());
-                float sum = number1Value + number2Value;
-
-                textViewOutput.setText(String.valueOf(sum));
+                // More work required to keep existing italic setting
+                Typeface existingTypeface = outputText.getTypeface();
+                outputText.setTypeface(existingTypeface, Typeface.BOLD);
             }
+        });
+
+        buttonItalic.setOnClickListener(v -> {
+            // More work required to keep existing bold setting
+            Typeface existingTypeface = outputText.getTypeface();
+            outputText.setTypeface(existingTypeface, Typeface.BOLD_ITALIC);
         });
     }
 }
