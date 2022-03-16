@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         buttonItalic.setOnClickListener(v -> {
             // More work required to keep existing bold setting
             Typeface existingTypeface = outputText.getTypeface();
-            outputText.setTypeface(existingTypeface, Typeface.BOLD_ITALIC);
+            outputText.setTypeface(existingTypeface, Typeface.ITALIC);
         });
     }
 }
