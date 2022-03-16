@@ -15,30 +15,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button firstButton = findViewById(R.id.buttonFirst);
-        final Button secondButton = findViewById(R.id.buttonSecond);
-        final Button thirdButton = findViewById(R.id.buttonThird);
-        final TextView resultIndicator = findViewById(R.id.resultIndicator);
-        final String youWonStartText = "You won ";
+        final TextView textViewPersonName = findViewById(R.id.personName);
+        final Button button = findViewById(R.id.buttonHello);
+        final TextView textViewOutput = findViewById(R.id.textViewOutput);
 
-        firstButton.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultIndicator.setText(youWonStartText + "Gold!");
-            }
-        });
-
-        secondButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resultIndicator.setText(youWonStartText + "Silver!");
-            }
-        });
-
-        thirdButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resultIndicator.setText(youWonStartText + "Bronze!");
+                textViewOutput.setText("Hi, " + textViewPersonName.getText() + "!");
             }
         });
     }
