@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,20 +15,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button redButton = findViewById(R.id.buttonRed);
-        final Button greenButton = findViewById(R.id.buttonGreen);
+        final Button firstButton = findViewById(R.id.buttonFirst);
+        final Button secondButton = findViewById(R.id.buttonSecond);
+        final Button thirdButton = findViewById(R.id.buttonThird);
+        final TextView resultIndicator = findViewById(R.id.resultIndicator);
+        final String youWonStartText = "You won ";
 
-        redButton.setOnClickListener(new View.OnClickListener() {
+        firstButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                redButton.setBackgroundColor(Color.RED);
-                greenButton.setBackgroundColor(Color.BLUE);
+                resultIndicator.setText(youWonStartText + "Gold!");
             }
         });
 
-        greenButton.setOnClickListener(v -> {
-            redButton.setBackgroundColor(Color.BLUE);
-            greenButton.setBackgroundColor(Color.GREEN);
+        secondButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultIndicator.setText(youWonStartText + "Silver!");
+            }
+        });
+
+        thirdButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultIndicator.setText(youWonStartText + "Bronze!");
+            }
         });
     }
 }

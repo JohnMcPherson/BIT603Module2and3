@@ -7,24 +7,44 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/buttonRed"
+        android:id="@+id/buttonFirst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Red"
+        android:layout_marginBottom="16dp"
+        android:text="First"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonGreen"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSecond"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/buttonGreen"
+        android:id="@+id/buttonSecond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Green"
+        android:layout_marginBottom="16dp"
+        android:text="Second"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonThird"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonFirst" />
+
+    <Button
+        android:id="@+id/buttonThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Third"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonRed"
+        app:layout_constraintStart_toEndOf="@+id/buttonSecond" />
+
+    <TextView
+        android:id="@+id/resultIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
